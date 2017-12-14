@@ -14,6 +14,11 @@
 		16A5746C1FDA793A003A4D0F /* LYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5746B1FDA793A003A4D0F /* LYTableViewController.m */; };
 		16A574701FDA9289003A4D0F /* LYDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5746F1FDA9289003A4D0F /* LYDataModel.m */; };
 		16A574761FDAA6CA003A4D0F /* LYSidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A574751FDAA6CA003A4D0F /* LYSidebarTableViewController.m */; };
+		16A5747A1FDAAC14003A4D0F /* LYViewControllerTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A574791FDAAC14003A4D0F /* LYViewControllerTransitioningDelegate.m */; };
+		16A5747D1FDAAE5F003A4D0F /* LYTransitionAnimater.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5747C1FDAAE5F003A4D0F /* LYTransitionAnimater.m */; };
+		16A574801FDABAA4003A4D0F /* LYSidebarAnimater.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5747F1FDABAA4003A4D0F /* LYSidebarAnimater.m */; };
+		16A574831FDAC032003A4D0F /* LYSidebarPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A574821FDAC032003A4D0F /* LYSidebarPresentationController.m */; };
+		16A574871FDAC5CB003A4D0F /* UIView+Style.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A574861FDAC5CB003A4D0F /* UIView+Style.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,17 @@
 		16A5746F1FDA9289003A4D0F /* LYDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYDataModel.m; sourceTree = "<group>"; };
 		16A574741FDAA6CA003A4D0F /* LYSidebarTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYSidebarTableViewController.h; sourceTree = "<group>"; };
 		16A574751FDAA6CA003A4D0F /* LYSidebarTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYSidebarTableViewController.m; sourceTree = "<group>"; };
+		16A574781FDAAC14003A4D0F /* LYViewControllerTransitioningDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYViewControllerTransitioningDelegate.h; sourceTree = "<group>"; };
+		16A574791FDAAC14003A4D0F /* LYViewControllerTransitioningDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYViewControllerTransitioningDelegate.m; sourceTree = "<group>"; };
+		16A5747B1FDAAE5F003A4D0F /* LYTransitionAnimater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYTransitionAnimater.h; sourceTree = "<group>"; };
+		16A5747C1FDAAE5F003A4D0F /* LYTransitionAnimater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYTransitionAnimater.m; sourceTree = "<group>"; };
+		16A5747E1FDABAA4003A4D0F /* LYSidebarAnimater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYSidebarAnimater.h; sourceTree = "<group>"; };
+		16A5747F1FDABAA4003A4D0F /* LYSidebarAnimater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYSidebarAnimater.m; sourceTree = "<group>"; };
+		16A574811FDAC032003A4D0F /* LYSidebarPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYSidebarPresentationController.h; sourceTree = "<group>"; };
+		16A574821FDAC032003A4D0F /* LYSidebarPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYSidebarPresentationController.m; sourceTree = "<group>"; };
+		16A574851FDAC5CB003A4D0F /* UIView+Style.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Style.h"; sourceTree = "<group>"; };
+		16A574861FDAC5CB003A4D0F /* UIView+Style.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Style.m"; sourceTree = "<group>"; };
+		16A5748B1FDAC7FF003A4D0F /* LYTransitionAnimaterDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYTransitionAnimaterDataSource.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +78,8 @@
 		16A5744C1FDA76B7003A4D0F /* TransitionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				16A574841FDAC594003A4D0F /* Categories */,
+				16A574771FDAABED003A4D0F /* Transition */,
 				16A5746D1FDA9270003A4D0F /* Data */,
 				16A574691FDA793A003A4D0F /* ViewController */,
 				16A5744D1FDA76B7003A4D0F /* AppDelegate.h */,
@@ -92,6 +110,31 @@
 				16A5746F1FDA9289003A4D0F /* LYDataModel.m */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		16A574771FDAABED003A4D0F /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				16A574781FDAAC14003A4D0F /* LYViewControllerTransitioningDelegate.h */,
+				16A574791FDAAC14003A4D0F /* LYViewControllerTransitioningDelegate.m */,
+				16A5748B1FDAC7FF003A4D0F /* LYTransitionAnimaterDataSource.h */,
+				16A5747B1FDAAE5F003A4D0F /* LYTransitionAnimater.h */,
+				16A5747C1FDAAE5F003A4D0F /* LYTransitionAnimater.m */,
+				16A5747E1FDABAA4003A4D0F /* LYSidebarAnimater.h */,
+				16A5747F1FDABAA4003A4D0F /* LYSidebarAnimater.m */,
+				16A574811FDAC032003A4D0F /* LYSidebarPresentationController.h */,
+				16A574821FDAC032003A4D0F /* LYSidebarPresentationController.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		16A574841FDAC594003A4D0F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				16A574851FDAC5CB003A4D0F /* UIView+Style.h */,
+				16A574861FDAC5CB003A4D0F /* UIView+Style.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,9 +209,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A574701FDA9289003A4D0F /* LYDataModel.m in Sources */,
+				16A574831FDAC032003A4D0F /* LYSidebarPresentationController.m in Sources */,
+				16A5747D1FDAAE5F003A4D0F /* LYTransitionAnimater.m in Sources */,
 				16A5745D1FDA76B7003A4D0F /* main.m in Sources */,
+				16A5747A1FDAAC14003A4D0F /* LYViewControllerTransitioningDelegate.m in Sources */,
 				16A5744F1FDA76B7003A4D0F /* AppDelegate.m in Sources */,
 				16A574761FDAA6CA003A4D0F /* LYSidebarTableViewController.m in Sources */,
+				16A574801FDABAA4003A4D0F /* LYSidebarAnimater.m in Sources */,
+				16A574871FDAC5CB003A4D0F /* UIView+Style.m in Sources */,
 				16A5746C1FDA793A003A4D0F /* LYTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
