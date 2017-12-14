@@ -43,10 +43,8 @@
             fromView.frame = originRect;
         }
     } completion:^(BOOL finished) {
-        if (finished) {
-            BOOL wasCancelled = [transitionContext transitionWasCancelled];
-            [transitionContext completeTransition:!wasCancelled];
-        }
+        BOOL wasCancelled = [transitionContext transitionWasCancelled];
+        [transitionContext completeTransition:!wasCancelled];
     }];
 }
 
