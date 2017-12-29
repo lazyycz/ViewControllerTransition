@@ -2,17 +2,16 @@
 //  LYSidebarTableViewController.m
 //  TransitionDemo
 //
-//  Created by Stone.Yu on 2017/12/8.
+//  Created by Stone.Yu on 2017/12/29.
 //  Copyright © 2017年 Stone.Yu. All rights reserved.
 //
 
 #import "LYSidebarTableViewController.h"
-#import "LYViewControllerTransitioningDelegate.h"
-#import "LYTransitionAnimaterDataSource.h"
+#import "LYSidebarTransitioningDelegate.h"
 
-@interface LYSidebarTableViewController () <LYSidebarAnimaterDelegate>
+@interface LYSidebarTableViewController ()
 
-@property (nonatomic, strong) LYViewControllerTransitioningDelegate *transitionDelegate;
+@property (nonatomic, strong) LYSidebarTransitioningDelegate *sidebarTransitioningDelegate;
 
 @end
 
@@ -21,10 +20,11 @@
 - (instancetype)init
 {
     if (self = [super init]) {
+        self.sidebarTransitioningDelegate = [LYSidebarTransitioningDelegate new];
+        self.transitioningDelegate = self.sidebarTransitioningDelegate;
         self.modalPresentationStyle = UIModalPresentationCustom;
-        self.transitioningDelegate = self.transitionDelegate;
+        self.modalPresentationCapturesStatusBarAppearance = YES;
     }
-    
     return self;
 }
 
@@ -32,11 +32,6 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
-}
-
-- (CGFloat)movementDistance
-{
-    return [UIScreen mainScreen].bounds.size.width * 9 / 16;
 }
 
 #pragma mark - Table view data source
@@ -51,23 +46,14 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = [NSString stringWithFormat:@"第%ld行", (long)indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"第%@行", @(indexPath.row + 1)];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (LYViewControllerTransitioningDelegate *)transitionDelegate
-{
-    if (!_transitionDelegate) {
-        _transitionDelegate = [[LYViewControllerTransitioningDelegate alloc] initWithAnimationClassString:@"LYSidebarAnimater"];
-    }
     
-    return _transitionDelegate;
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
