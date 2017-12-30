@@ -11,8 +11,8 @@
 @interface LYDataModel : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *classString;
+@property (nonatomic, copy) NSString *action;
 
-+ (instancetype)initWithName:(NSString *)name classString:(NSString *)class;
++ (instancetype)initWithName:(NSString *)name action:(NSString *)action;
 
 @end

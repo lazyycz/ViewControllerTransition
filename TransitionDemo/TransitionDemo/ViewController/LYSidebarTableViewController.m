@@ -17,6 +17,8 @@
 
 @implementation LYSidebarTableViewController
 
+static NSString * const reuseIdentifier = @"Cell";
+
 - (instancetype)init
 {
     if (self = [super init]) {
@@ -31,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];
 }
 
 #pragma mark - Table view data source
@@ -41,12 +43,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
+    return [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.textLabel.text = [NSString stringWithFormat:@"第%@行", @(indexPath.row + 1)];
+    cell.textLabel.text = [NSString stringWithFormat:@"第 %@ 行", @(indexPath.row + 1)];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

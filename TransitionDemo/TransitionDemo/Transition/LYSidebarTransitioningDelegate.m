@@ -11,7 +11,7 @@
 #import "UIView+Style.h"
 
 const CGFloat kSidebarWidth = 260;
-const CGFloat kAnimateDuration = 0.35;
+const CGFloat kSidebarAnimateDuration = 0.35;
 
 #pragma mark -
 #pragma mark - Animator
@@ -24,7 +24,7 @@ const CGFloat kAnimateDuration = 0.35;
 
 - (NSTimeInterval)transitionDuration:(nullable id <UIViewControllerContextTransitioning>)transitionContext
 {
-    return kAnimateDuration;
+    return kSidebarAnimateDuration;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext

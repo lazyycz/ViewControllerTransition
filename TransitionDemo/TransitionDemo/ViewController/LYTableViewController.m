@@ -7,6 +7,8 @@
 //
 
 #import "LYTableViewController.h"
+#import "LYSidebarTableViewController.h"
+#import "LYBrowserCollectionViewController.h"
 #import "LYDataModel.h"
 
 @interface LYTableViewController ()
@@ -24,10 +26,6 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataSource.count;
@@ -47,9 +45,33 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    Class class = NSClassFromString(self.dataSource[indexPath.row].classString);
-    UIViewController *viewController = [[class alloc] init];
-    [self.navigationController presentViewController:viewController animated:YES completion:nil];
+    _Pragma("clang diagnostic push")
+    _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"")
+    LYDataModel *dataModel = self.dataSource[indexPath.row];
+    if (dataModel.action.length) {
+        SEL action = NSSelectorFromString(dataModel.action);
+        if ([self respondsToSelector:action]) {
+            [self performSelector:action withObject:dataModel];
+        }
+    }
+    _Pragma("clang diagnostic pop")
+}
+
+- (void)gotoSidebarViewController
+{
+    LYSidebarTableViewController *vc = [LYSidebarTableViewController new];
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)gotoBrowserViewController
+{
+    UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
+    flowLayout.itemSize = CGSizeMake(100, 90);
+    flowLayout.minimumLineSpacing = 10;
+    flowLayout.sectionInset = UIEdgeInsetsMake(10, 20, 10, 20);
+    
+    LYBrowserCollectionViewController *vc = [[LYBrowserCollectionViewController alloc] initWithCollectionViewLayout:flowLayout];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)initData
@@ -58,7 +80,10 @@
 
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
     
-    self.dataSource = @[[LYDataModel initWithName:@"侧边栏视图" classString:@"LYSidebarTableViewController"]];
+    self.dataSource = @[
+                        [LYDataModel initWithName:@"侧边栏视图" action:NSStringFromSelector(@selector(gotoSidebarViewController))],
+                        [LYDataModel initWithName:@"图片浏览器" action:NSStringFromSelector(@selector(gotoBrowserViewController))],
+                        ];
 }
 
 @end

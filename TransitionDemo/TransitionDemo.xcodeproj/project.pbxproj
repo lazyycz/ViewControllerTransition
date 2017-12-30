@@ -10,6 +10,9 @@
 		1616DB571FF62A0A009C24DF /* LYSidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1616DB561FF62A0A009C24DF /* LYSidebarTableViewController.m */; };
 		1616DB5A1FF62BCE009C24DF /* LYSidebarTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1616DB591FF62BCE009C24DF /* LYSidebarTransitioningDelegate.m */; };
 		1616DB5E1FF62CB2009C24DF /* LYPanDirectionGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1616DB5D1FF62CB2009C24DF /* LYPanDirectionGestureRecognizer.m */; };
+		1616DB611FF636DF009C24DF /* LYBrowserCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1616DB601FF636DE009C24DF /* LYBrowserCollectionViewController.m */; };
+		1616DB641FF65C2F009C24DF /* LYBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1616DB631FF65C2F009C24DF /* LYBrowserViewController.m */; };
+		1616DB671FF72D71009C24DF /* LYBrowserTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1616DB661FF72D71009C24DF /* LYBrowserTransitioningDelegate.m */; };
 		16A5744F1FDA76B7003A4D0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5744E1FDA76B7003A4D0F /* AppDelegate.m */; };
 		16A574571FDA76B7003A4D0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A574561FDA76B7003A4D0F /* Assets.xcassets */; };
 		16A5745A1FDA76B7003A4D0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A574581FDA76B7003A4D0F /* LaunchScreen.storyboard */; };
@@ -26,6 +29,12 @@
 		1616DB591FF62BCE009C24DF /* LYSidebarTransitioningDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYSidebarTransitioningDelegate.m; sourceTree = "<group>"; };
 		1616DB5C1FF62CB2009C24DF /* LYPanDirectionGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYPanDirectionGestureRecognizer.h; sourceTree = "<group>"; };
 		1616DB5D1FF62CB2009C24DF /* LYPanDirectionGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYPanDirectionGestureRecognizer.m; sourceTree = "<group>"; };
+		1616DB5F1FF636DE009C24DF /* LYBrowserCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBrowserCollectionViewController.h; sourceTree = "<group>"; };
+		1616DB601FF636DE009C24DF /* LYBrowserCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYBrowserCollectionViewController.m; sourceTree = "<group>"; };
+		1616DB621FF65C2F009C24DF /* LYBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBrowserViewController.h; sourceTree = "<group>"; };
+		1616DB631FF65C2F009C24DF /* LYBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYBrowserViewController.m; sourceTree = "<group>"; };
+		1616DB651FF72D71009C24DF /* LYBrowserTransitioningDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBrowserTransitioningDelegate.h; sourceTree = "<group>"; };
+		1616DB661FF72D71009C24DF /* LYBrowserTransitioningDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYBrowserTransitioningDelegate.m; sourceTree = "<group>"; };
 		16A5744A1FDA76B7003A4D0F /* TransitionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A5744D1FDA76B7003A4D0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		16A5744E1FDA76B7003A4D0F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -102,6 +111,10 @@
 				16A5746B1FDA793A003A4D0F /* LYTableViewController.m */,
 				1616DB551FF62A0A009C24DF /* LYSidebarTableViewController.h */,
 				1616DB561FF62A0A009C24DF /* LYSidebarTableViewController.m */,
+				1616DB5F1FF636DE009C24DF /* LYBrowserCollectionViewController.h */,
+				1616DB601FF636DE009C24DF /* LYBrowserCollectionViewController.m */,
+				1616DB621FF65C2F009C24DF /* LYBrowserViewController.h */,
+				1616DB631FF65C2F009C24DF /* LYBrowserViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -120,6 +133,8 @@
 			children = (
 				1616DB581FF62BCE009C24DF /* LYSidebarTransitioningDelegate.h */,
 				1616DB591FF62BCE009C24DF /* LYSidebarTransitioningDelegate.m */,
+				1616DB651FF72D71009C24DF /* LYBrowserTransitioningDelegate.h */,
+				1616DB661FF72D71009C24DF /* LYBrowserTransitioningDelegate.m */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -204,13 +219,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1616DB641FF65C2F009C24DF /* LYBrowserViewController.m in Sources */,
 				1616DB5E1FF62CB2009C24DF /* LYPanDirectionGestureRecognizer.m in Sources */,
 				16A574701FDA9289003A4D0F /* LYDataModel.m in Sources */,
 				16A5745D1FDA76B7003A4D0F /* main.m in Sources */,
 				16A5744F1FDA76B7003A4D0F /* AppDelegate.m in Sources */,
+				1616DB611FF636DF009C24DF /* LYBrowserCollectionViewController.m in Sources */,
 				1616DB5A1FF62BCE009C24DF /* LYSidebarTransitioningDelegate.m in Sources */,
 				1616DB571FF62A0A009C24DF /* LYSidebarTableViewController.m in Sources */,
 				16A574871FDAC5CB003A4D0F /* UIView+Style.m in Sources */,
+				1616DB671FF72D71009C24DF /* LYBrowserTransitioningDelegate.m in Sources */,
 				16A5746C1FDA793A003A4D0F /* LYTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

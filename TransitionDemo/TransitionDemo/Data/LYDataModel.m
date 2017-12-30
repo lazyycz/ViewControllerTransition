@@ -10,11 +10,11 @@
 
 @implementation LYDataModel
 
-+ (instancetype)initWithName:(NSString *)name classString:(NSString *)class
++ (instancetype)initWithName:(NSString *)name action:(NSString *)action
 {
     LYDataModel *data = [[LYDataModel alloc] init];
     data.name = name;
-    data.classString = class;
+    data.action = action;
     return data;
 }
 
