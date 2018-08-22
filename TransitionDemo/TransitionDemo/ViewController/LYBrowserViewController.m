@@ -36,6 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
     [self.view addSubview:[self backgroundView]];
     [self.view addSubview:[self imageView]];
 }

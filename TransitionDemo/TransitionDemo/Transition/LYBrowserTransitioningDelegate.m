@@ -54,7 +54,7 @@ const CGFloat kBrowserAnimateDuration = 0.35;
     
     CGRect startRect;
     CGRect endRect;
-    LYBrowserAnimatorModle *data = self.animatorData();
+    LYBrowserAnimatorModle *data = self.animatorData ? self.animatorData() : nil;
     
     if (toViewController.isBeingPresented) {
         startRect = data.originRect;
